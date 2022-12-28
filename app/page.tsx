@@ -1,11 +1,14 @@
 import { demos } from '#/lib/demos';
 import Link from 'next/link';
-
-export default function Page() {
+import LoginBtn from './login-btn';
+import AppDescription from './app-description';
+import React from 'react';
+export default async function Page() {
   return (
     <div className="space-y-8">
       <h1 className="text-xl font-medium text-gray-300">Examples</h1>
-
+      <AppDescription/>
+      <LoginBtn></LoginBtn>
       <div className="space-y-10 text-white">
         {demos.map((section) => {
           return (
