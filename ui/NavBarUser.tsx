@@ -1,24 +1,19 @@
-"use client";
-
 import { useSession, signIn, signOut } from "next-auth/react";
-import Button from "../ui/Button"
-import UserInformation from "./user-information";
-
-export default function Component({ children }) {
+import Image from "next/image"
+export default function NavBarButton() {
   const { data: session } = useSession();
   if (session) {
+
     return (
       <>
-        Signed in as {session.user.email} <br />
         {/* <UserInformation data={session.user} /> */}
-        <Button onClick={() => signOut()}>Sign out</Button>
-        {children}
+        <button onClick={() => signOut()}>Sign out</button>
+        <Image src={session.user?.image} alt={session.user?.name} width={40} height={40} className="rounded-full inline mx-2"/>
       </>
     );
   }
   return (
     <>
-      Not signed in <br />
       <button onClick={() => signIn()}>Sign in</button>
     </>
   );

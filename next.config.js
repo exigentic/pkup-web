@@ -6,6 +6,19 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  compiler: {
+    styledComponents: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        //port: '',
+        //pathname: '/account123/**',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
