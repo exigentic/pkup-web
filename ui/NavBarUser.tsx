@@ -1,5 +1,7 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import Image from "next/image"
+import Link from 'next/link';
+import FaceSmile from "@heroicons/react/24/outline/FaceSmileIcon";
 export default function NavBarButton() {
   const { data: session } = useSession();
   if (session) {
@@ -7,14 +9,19 @@ export default function NavBarButton() {
     return (
       <>
         {/* <UserInformation data={session.user} /> */}
-        <button onClick={() => signOut()}>Sign out</button>
-        <Image src={session.user?.image} alt={session.user?.name} width={40} height={40} className="rounded-full inline mx-2"/>
+
+        <Link href={"/profile"}>
+          { session.user?.image
+           ? <Image src={session.user?.image} alt={session.user?.name ? session.user.name : "User"} width={40} height={40} className="rounded-xl inline"/>
+            : <FaceSmile/>
+          }
+        </Link>
       </>
     );
   }
   return (
     <>
-      <button onClick={() => signIn()}>Sign in</button>
+      <button className="bg-pumpkin-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => signIn()}>Sign in</button>
     </>
   );
 }

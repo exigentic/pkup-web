@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@heroicons/react': 1.0.6
+  '@heroicons/react': 2.0.13
   '@next-auth/supabase-adapter': 0.2.1
   '@supabase/supabase-js': 2.2.2
   '@tailwindcss/forms': 0.5.3
@@ -31,7 +31,7 @@ specifiers:
   use-count-up: 3.0.1
 
 dependencies:
-  '@heroicons/react': 1.0.6_react@18.2.0
+  '@heroicons/react': 2.0.13_react@18.2.0
   '@next-auth/supabase-adapter': 0.2.1_2ipruqns63smqy32b274o5md5q
   '@supabase/supabase-js': 2.2.2
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
@@ -1394,8 +1394,8 @@ packages:
       - supports-color
     dev: true
 
-  /@heroicons/react/1.0.6_react@18.2.0:
-    resolution: {integrity: sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==}
+  /@heroicons/react/2.0.13_react@18.2.0:
+    resolution: {integrity: sha512-iSN5XwmagrnirWlYEWNPdCDj9aRYVD/lnK3JlsC9/+fqGF80k8C7rl+1HCvBX0dBoagKqOFBs6fMhJJ1hOg1EQ==}
     peerDependencies:
       react: '>= 16'
     dependencies:
