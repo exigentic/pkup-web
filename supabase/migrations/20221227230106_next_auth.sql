@@ -1,3 +1,5 @@
+
+
 --
 -- Name: next_auth; Type: SCHEMA;
 --
