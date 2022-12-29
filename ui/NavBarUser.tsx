@@ -5,7 +5,7 @@ import FaceSmile from "@heroicons/react/24/outline/FaceSmileIcon";
 export default function NavBarButton() {
   const { data: session } = useSession();
   if (session) {
-
+    console.log("User Info: ", {session})
     return (
       <>
         {/* <UserInformation data={session.user} /> */}
