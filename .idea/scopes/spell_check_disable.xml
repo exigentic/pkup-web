@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="spell-check disable" pattern="!file: **/*.sql" />
+</component>

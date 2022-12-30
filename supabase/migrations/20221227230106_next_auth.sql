@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS next_auth.users
     id uuid NOT NULL DEFAULT uuid_generate_v4(),
     name text,
     email text,
-    "emailVerified" timestamp with time zone,
-                                  image text,
-                                  CONSTRAINT users_pkey PRIMARY KEY (id),
+    emailVerified timestamp with time zone,
+    image text,
+    CONSTRAINT users_pkey PRIMARY KEY (id),
     CONSTRAINT email_unique UNIQUE (email)
     );
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS  next_auth.accounts
     id uuid NOT NULL DEFAULT uuid_generate_v4(),
     type text NOT NULL,
     provider text NOT NULL,
-    "providerAccountId" text NOT NULL,
+    providerAccountId text NOT NULL,
     refresh_token text,
     access_token text,
     expires_at bigint,
@@ -74,10 +74,10 @@ CREATE TABLE IF NOT EXISTS  next_auth.accounts
     session_state text,
     oauth_token_secret text,
     oauth_token text,
-    "userId" uuid,
+    userId uuid,
     CONSTRAINT accounts_pkey PRIMARY KEY (id),
-    CONSTRAINT provider_unique UNIQUE (provider, "providerAccountId"),
-    CONSTRAINT "accounts_userId_fkey" FOREIGN KEY ("userId")
+    CONSTRAINT provider_unique UNIQUE (provider, providerAccountId),
+    CONSTRAINT accounts_userId_fkey FOREIGN KEY (userId)
     REFERENCES  next_auth.users (id) MATCH SIMPLE
     ON UPDATE NO ACTION
     ON DELETE CASCADE
