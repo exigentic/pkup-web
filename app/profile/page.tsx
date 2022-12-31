@@ -1,35 +1,21 @@
 "use client"
 
 import { signOut, useSession } from 'next-auth/react';
-import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
+import supabaseBrowser from '#/utils/supabase-browser';
 
 export default function Profile() {
-  const { data: session, status } = useSession()
-  const [data, setData] = useState<any>(null )
-
-  const { supabaseAccessToken } = session!;
+  const { data: session,status } = useSession();
+  console.log("status", status);
+  const [data, setData] = useState<any>(null);
 
   useEffect(() => {
     console.log("fetching data");
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        global: {
-          headers: {
-            Authorization: `Bearer ${supabaseAccessToken}`,
-          },
-        },
-      }
-    )
 
+    const supabase = supabaseBrowser(session!);
     supabase.from("profile").select("*").then(({data}) => setData(data))
-  }, [supabaseAccessToken])
+  }, [session])
 
-
-
-  console.log("data", data);
   return (
     <div>
       <pre>data: {JSON.stringify(data, null, 2)}</pre>
