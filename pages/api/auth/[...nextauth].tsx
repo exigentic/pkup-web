@@ -39,6 +39,9 @@ export const authOptions: NextAuthOptions = {
     url: process.env.NEXT_PUBLIC_SUPABASE_URL as string,
     secret: process.env.SUPABASE_SERVICE_ROLE_KEY as string,
   }),
+  theme: {
+    colorScheme: "light",
+  },
   callbacks: {
     async session({ session, user }) {
       const signingSecret = process.env.SUPABASE_JWT_SECRET
@@ -55,6 +58,7 @@ export const authOptions: NextAuthOptions = {
       return session
     },
   },
+
 }
 
 export default NextAuth(authOptions)

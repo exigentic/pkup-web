@@ -1,5 +1,7 @@
 import supabase from '#/utils/supabase'
 import { notFound } from 'next/navigation'
+import { unstable_getServerSession } from 'next-auth';
+import { NextRequest, NextResponse } from 'next/server';
 export const revalidate = 0
 
 export async function getData() {
@@ -10,7 +12,7 @@ export async function getData() {
   }))
 }
 
-export default async function Page({ params: { slug } }: { params: { slug: string } }) {
+export default async function Page( { params: { slug } }: { params: { slug: string } }) {
   const { data: party } = await supabase.from('party').select("*").eq('slug', slug).single()
 
   if (!party) {
