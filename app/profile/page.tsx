@@ -2,7 +2,7 @@
 
 import { signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
-import supabaseBrowser from '#/utils/supabase-browser';
+import SupabaseBrowserClient from '#/utils/SupabaseBrowserClient';
 
 export default function Profile() {
   const { data: session,status } = useSession();
@@ -12,7 +12,7 @@ export default function Profile() {
   useEffect(() => {
     console.log("fetching data");
 
-    const supabase = supabaseBrowser(session!);
+    const supabase = SupabaseBrowserClient(session!);
     supabase.from("profile").select("*").then(({data}) => setData(data))
   }, [session])
 

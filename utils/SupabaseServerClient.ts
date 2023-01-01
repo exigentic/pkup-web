@@ -1,8 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { Session } from 'next-auth';
-
-
-const  buildClient = (session: Session) => {
+const SupabaseServerClient = async (session: Session) => {
   const { supabaseAccessToken } = session!;
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,7 +12,7 @@ const  buildClient = (session: Session) => {
         },
       },
     }
-  );
+  )
 }
 
-export default buildClient;
+export default SupabaseServerClient;
