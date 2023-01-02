@@ -6,7 +6,7 @@ create table "public"."party" (
     "created_time" timestamp without time zone not null,
     "created_by" text not null,
     "updated_time" timestamp without time zone,
-    "updated_by" timestamp without time zone
+    "updated_by" text
 );
 
 
