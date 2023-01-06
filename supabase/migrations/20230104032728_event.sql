@@ -8,6 +8,7 @@ create table "public"."event" (
     "start_time" time without time zone not null,
     "end_time" time without time zone not null,
     "is_recurring" boolean not null default false,
+    "rrule" text,
     "created_time" timestamp without time zone not null default now(),
     "created_by" text not null,
     "updated_time" timestamp without time zone,
