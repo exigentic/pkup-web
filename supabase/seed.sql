@@ -11,3 +11,5 @@ values  ('61c9059c-c33f-414f-a629-c7681b89bf7d', 'CAC Lunch Hoops', 'cac-lunch-h
         ('e349cce4-2174-40da-8d88-01bfeabc5f4c', 'Temple''s Edge Dungeons & Dragons Sundays', 'temples-edge-dnd-sunday', '2022-12-30 22:14:48.834714', 'clay@pfd.net', null, null),
         ('62a6efd3-38dd-446e-b153-1de65ba09bea', 'Temple''s Edge Magic Mondays', 'temples-edge-magic-monday', '2022-12-30 22:14:48.834714', 'clay@pfd.net', null, null);
 
+insert into public.event (id, party_id, name, description, start_date, end_date, start_time, end_time, is_recurring, rrule, created_time, created_by, updated_time, updated_by) values ('cce16625-98dd-4db3-ab64-fdd9db623dae', '61c9059c-c33f-414f-a629-c7681b89bf7d', 'Lunch Hoops', 'Old men, playing basketball', '2023-01-06', null, '12:00:00', '13:00:00', true, 'DTSTART;TZID=America/New_York:20230105T120000
+RRULE:FREQ=WEEKLY;INTERVAL=1;WKST=MO;BYDAY=MO,TU,WE,TH,FR', '2023-01-06 03:30:22.965780', 'clay@pfd.net', null, null);
